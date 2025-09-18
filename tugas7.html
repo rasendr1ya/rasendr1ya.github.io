@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-unit {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-left: 0.25rem;
+        }
+        
+        .progress-bar {
+            border-radius: 10px;
+        }
+        
+        .border-primary-custom {
+            border-left: 4px solid #007bff !important;
+        }
+        
+        .border-success-custom {
+            border-left: 4px solid #28a745 !important;
+        }
+        
+        .border-info-custom {
+            border-left: 4px solid #17a2b8 !important;
+        }
+        
+        .border-warning-custom {
+            border-left: 4px solid #ffc107 !important;
+        }
+        
+        .border-danger-custom {
+            border-left: 4px solid #dc3545 !important;
+        }
+        
+        .dashboard-title {
+            color: #2c3e50;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        .student-info {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            font-weight: normal;
+        }
+        
+        .icon-wrapper {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .icon-primary { background-color: rgba(0, 123, 255, 0.1); color: #007bff; }
+        .icon-success { background-color: rgba(40, 167, 69, 0.1); color: #28a745; }
+        .icon-info { background-color: rgba(23, 162, 184, 0.1); color: #17a2b8; }
+        .icon-warning { background-color: rgba(255, 193, 7, 0.1); color: #ffc107; }
+        .icon-danger { background-color: rgba(220, 53, 69, 0.1); color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="dashboard-title">Smart Farming Dashboard</h1>
+                <p class="student-info">Danar Bagus Rasendriya (5027231055)</p>
+            </div>
+        </div>
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+            
+            <div class="col">
+                <div class="card h-100 border-primary-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-primary">
+                            <i class="bi bi-moisture"></i>
+                        </div>
+                        <div class="metric-label">Kelembaban (RH)</div>
+                        <h2 class="metric-value text-primary">54<span class="metric-unit">%</span></h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 54%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-success-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-success">
+                            <i class="bi bi-droplet"></i>
+                        </div>
+                        <div class="metric-label">TDS</div>
+                        <h2 class="metric-value text-success">400<span class="metric-unit">ppm</span></h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-info-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-info">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <div class="metric-label">Kekeruhan (Turbid)</div>
+                        <h2 class="metric-value text-info">18<span class="metric-unit">NTU</span></h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-warning-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-warning">
+                            <i class="bi bi-thermometer-half"></i>
+                        </div>
+                        <div class="metric-label">Temperatur Air (WTemp)</div>
+                        <h2 class="metric-value text-warning">25<span class="metric-unit">°C</span></h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-danger-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-danger">
+                            <i class="bi bi-water"></i>
+                        </div>
+                        <div class="metric-label">Aliran Air (WFlow)</div>
+                        <h2 class="metric-value text-danger">34</h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 68%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-primary-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-primary">
+                            <i class="bi bi-cloud"></i>
+                        </div>
+                        <div class="metric-label">Oksigen Terlarut (Diss Oxygen)</div>
+                        <h2 class="metric-value text-primary">10<span class="metric-unit">ppm</span></h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-success-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-success">
+                            <i class="bi bi-brightness-high"></i>
+                        </div>
+                        <div class="metric-label">Intensitas Cahaya (Lux)</div>
+                        <h2 class="metric-value text-success">100<span class="metric-unit">Lux</span></h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-info-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-info">
+                            <i class="bi bi-thermometer"></i>
+                        </div>
+                        <div class="metric-label">Temperatur Udara (ATemp)</div>
+                        <h2 class="metric-value text-info">34<span class="metric-unit">°C</span></h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-warning-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-warning">
+                            <i class="bi bi-lightning"></i>
+                        </div>
+                        <div class="metric-label">EC</div>
+                        <h2 class="metric-value text-warning">2</h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 15%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 border-danger-custom">
+                    <div class="card-body">
+                        <div class="icon-wrapper icon-danger">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <div class="metric-label">PH</div>
+                        <h2 class="metric-value text-danger">7.1</h2>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 71%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
